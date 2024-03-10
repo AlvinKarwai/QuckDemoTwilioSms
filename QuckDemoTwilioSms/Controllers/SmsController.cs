@@ -22,8 +22,7 @@ namespace QuckDemoTwilioSms.Controllers
         }
         public IActionResult SendSms(Detail detail)
         {
-            detail.Message = "Hi";
-            detail.PhoneNumber = "07477118817";
+
             _clientWrapper.Send(detail);
 
             return View();

@@ -3,6 +3,18 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome To Alvins Quick Sms Demo Twilio project</h1>
 </div>
+<form>
+    <div class="form-group">
+        <label>Phone Number</label>
+        <input type="phonenumber" class="form-control" id="phoneNumberInput1" aria-describedby="phonenumberHelp" placeholder="Enter Phone Number">
+        <small id="phoneNumberHelp" class="form-text text-muted">We'll never share your phonenumber with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleMessage">Message</label>
+        <input type="message" class="form-control" id="messageInput" placeholder="Message">
+    </div>
+    <br/>
+    <button type="submit" class="btn btn-primary">Send Sms</button>
+</form>
