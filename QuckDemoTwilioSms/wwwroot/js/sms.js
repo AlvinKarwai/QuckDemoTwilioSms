@@ -11,7 +11,6 @@ function SendSms() {
 
     var detail = JSON.stringify(HealingScripture);
 
-
     $.ajax({
         type: "POST",
         url: '/sms/sendsms',
