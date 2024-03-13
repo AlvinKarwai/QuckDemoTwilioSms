@@ -29,11 +29,11 @@ namespace QuckDemoTwilioSms.Controllers
             var valid=_smsValidate.IsValid(detail);
             _logger.LogInformation("Request sending...");
 
-            if (valid.Equals(true))
-            {
+   /*         if (valid.Equals(true))
+            {*/
                 _clientWrapper.Send(detail);
                 _logger.LogInformation("Request sent...");
-            }
+        /*    }*/
 
             return View();
         }
