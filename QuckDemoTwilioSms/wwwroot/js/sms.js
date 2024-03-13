@@ -1,6 +1,6 @@
 ﻿
 function SendSms() {
-
+    document.getElementById("ErrorMessage").innerHTML ="";
     var phoneNumber = $("#phoneNumberInput").val();
     var message = $("#messageInput").val();
     var sendSms = true;

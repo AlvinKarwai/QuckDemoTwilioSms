@@ -23,16 +23,25 @@ namespace QuckDemoTwilioSms.Wrapper.Classes
             string authToken = _options.TOKEN;
             string fromPhoneNumber = _options.PhoneNumber;
 
-            TwilioClient.Init(accountSid, authToken);
+            try
+            {
+                TwilioClient.Init(accountSid, authToken);
 
-            var message = MessageResource.Create(
-                body: detail.Message,
-                from: new Twilio.Types.PhoneNumber(fromPhoneNumber),
-                to: new Twilio.Types.PhoneNumber(detail.PhoneNumber)
-            );
+                var message = MessageResource.Create(
+                    body: detail.Message,
+                    from: new Twilio.Types.PhoneNumber(fromPhoneNumber),
+                    to: new Twilio.Types.PhoneNumber(detail.PhoneNumber)
+                );
 
-            return message;
+                return message;
+            }
+            catch (Exception e)
+            {
+             
+                Console.WriteLine(e.Message +"Couldn't execute the program");
+            }
 
+            return null;
         }
     }
 }
