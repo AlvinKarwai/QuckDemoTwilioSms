@@ -14,27 +14,27 @@ function SendSms() {
     var regex = '^(((\\+44\\s?\\d{4}|\\(?0\\d{4}\\)?)\\s?\\d{3}\\s?\\d{3})|((\\+44\\s?\\d{3}|\\(?0\\d{3}\\)?)\\s?\\d{3}\\s?\\d{4})|((\\+44\\s?\\d{2}|\\(?0\\d{2}\\)?)\\s?\\d{4}\\s?\\d{4}))(\\s?\\#(\\d{4}|\\d{3}))?$';
     const isPhoneNumberValid = new RegExp(regex).test(phoneNumber);
 
-    if (isPhoneNumberValid == false) {
 
-        errorMessage.push("Phone number should be in a valid UK format\n");
-        document.getElementById("ErrorMessage").style.color = "#FF0000";
+    if (phoneNumber === "" ) {
+
+        errorMessage.push("Phone Number should not be empty!");
         sendSms = false;
     }
 
-    if (phoneNumber === "") {
-        errorMessage.push("Phone Number should not be empty!\n");
-        document.getElementById("ErrorMessage").style.color = "#FF0000";
+    if (isPhoneNumberValid === false && phoneNumber != "") {
+        errorMessage.push("Phone number should be in a valid UK format");
         sendSms = false;
     }
 
     if (message === "") {
-        errorMessage.push("Message should not be empty!\n");
-        document.getElementById("ErrorMessage").style.color = "#FF0000";
+        errorMessage.push("Message should not be empty!");
+  
         sendSms = false;
     }
 
     if (sendSms == false) {
         document.getElementById("ErrorMessage").innerHTML = errorMessage;
+        document.getElementById("ErrorMessage").style.color = "#FF0000";
     }
 
     var detail = JSON.stringify(detail);

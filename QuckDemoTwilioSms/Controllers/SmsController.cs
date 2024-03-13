@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using QuckDemoTwilioSms.Models;
-using QuckDemoTwilioSms.Validator;
 using QuckDemoTwilioSms.Wrapper.Interfaces;
 using System.Diagnostics;
 

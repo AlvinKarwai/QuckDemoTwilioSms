@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Identity;
 using QuckDemoTwilioSms.Options;
-using QuckDemoTwilioSms.Validator;
 using QuckDemoTwilioSms.Wrapper.Classes;
 using QuckDemoTwilioSms.Wrapper.Interfaces;
 
