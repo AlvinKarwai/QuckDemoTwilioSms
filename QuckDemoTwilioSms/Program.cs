@@ -18,7 +18,6 @@ namespace QuckDemoTwilioSms
             builder.Services.Configure<TwilioOptions>(
             builder.Configuration.GetSection(TwilioOptions.Twilio));
             builder.Services.AddScoped<ITwilioClientWrapper, TwilioClientWrapper>();
-            builder.Services.AddScoped<ISmsValidate, SmsValidate>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

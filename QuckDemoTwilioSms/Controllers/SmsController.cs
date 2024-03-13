@@ -10,13 +10,11 @@ namespace QuckDemoTwilioSms.Controllers
     {
         private readonly ILogger<SmsController> _logger;
         private ITwilioClientWrapper _clientWrapper;
-        private ISmsValidate _smsValidate;
 
-        public SmsController(ILogger<SmsController> logger, ITwilioClientWrapper clientWrapper, ISmsValidate smsValidate)
+        public SmsController(ILogger<SmsController> logger, ITwilioClientWrapper clientWrapper)
         {
             _logger = logger;
             _clientWrapper = clientWrapper;
-            _smsValidate = smsValidate;
         }
 
         public IActionResult Index()
@@ -26,14 +24,10 @@ namespace QuckDemoTwilioSms.Controllers
 
         public IActionResult SendSms([FromBody] Detail detail)
         {
-            var valid=_smsValidate.IsValid(detail);
+            //validation all handled in the client side!
             _logger.LogInformation("Request sending...");
-
-   /*         if (valid.Equals(true))
-            {*/
-                _clientWrapper.Send(detail);
-                _logger.LogInformation("Request sent...");
-        /*    }*/
+            _clientWrapper.Send(detail);
+            _logger.LogInformation("Request sent...");
 
             return View();
         }
