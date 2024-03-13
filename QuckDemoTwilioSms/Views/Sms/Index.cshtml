@@ -1,21 +1,25 @@
-﻿@{
+﻿@model Detail;
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome To Alvins Quick Sms Demo Twilio project</h1>
-</div>
+</div> 
+
+<div id="ErrorMessage"></div>
+<br/>
 
 <form>
     <div class="form-group">
         <label>Phone Number</label>
-        <input type="phonenumber" class="form-control" id="phoneNumberInput" aria-describedby="phonenumberHelp" placeholder="Enter Phone Number">
+        <input class="form-control" id="phoneNumberInput" aria-describedby="phonenumberHelp" placeholder="Enter Phone Number">
         <small id="phoneNumberHelp" class="form-text text-muted">We'll never share your phonenumber with anyone else.</small>
     </div>
     <div class="form-group">
         <label for="exampleMessage">Message</label>
-        <input type="message" class="form-control" id="messageInput" placeholder="Message">
+        <input class="form-control" id="messageInput" placeholder="Message">
     </div>
     <br/>
-    <button onclick="SendSms()" class="btn btn-primary">Send Sms</button>
+    <a onclick="SendSms()" class="btn btn-primary">Send Sms</a>
 </form>

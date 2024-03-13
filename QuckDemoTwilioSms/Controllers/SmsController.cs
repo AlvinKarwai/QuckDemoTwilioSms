@@ -24,7 +24,6 @@ namespace QuckDemoTwilioSms.Controllers
             return View();
         }
 
-        [HttpPost]
         public IActionResult SendSms([FromBody] Detail detail)
         {
             var valid=_smsValidate.IsValid(detail);
@@ -34,7 +33,6 @@ namespace QuckDemoTwilioSms.Controllers
             {
                 _clientWrapper.Send(detail);
                 _logger.LogInformation("Request sent...");
-                return View();
             }
 
             return View();
