@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Options;
+using QuckDemoTwilioSms.Controllers;
 using QuckDemoTwilioSms.Models;
 using QuckDemoTwilioSms.Options;
 using QuckDemoTwilioSms.Wrapper.Interfaces;
@@ -11,6 +12,7 @@ namespace QuckDemoTwilioSms.Wrapper.Classes
     {
 
         private readonly TwilioOptions _options;
+        private readonly ILogger<TwilioClientWrapper> _logger;
 
         public TwilioClientWrapper(IOptions<TwilioOptions> options)
         {
@@ -37,8 +39,7 @@ namespace QuckDemoTwilioSms.Wrapper.Classes
             }
             catch (Exception e)
             {
-             
-                Console.WriteLine(e.Message +"Couldn't execute the program");
+                _logger.LogError(e.Message + "Couldn't execute the program"); 
             }
 
             return null;

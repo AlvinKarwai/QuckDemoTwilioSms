@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using QuckDemoTwilioSms.Models;
 using QuckDemoTwilioSms.Wrapper.Interfaces;
 using System.Diagnostics;
+using Twilio.TwiML.Messaging;
 
 namespace QuckDemoTwilioSms.Controllers
 {
@@ -25,10 +26,15 @@ namespace QuckDemoTwilioSms.Controllers
         {
             //validation all handled in the client side!
             _logger.LogInformation("Request sending...");
-            _clientWrapper.Send(detail);
+            var messageResource =_clientWrapper.Send(detail);
             _logger.LogInformation("Request sent...");
 
-            return View();
+            if (messageResource == null)
+            {
+                return BadRequest();
+            }
+
+            return Ok();
         }
 
         public IActionResult Privacy()
