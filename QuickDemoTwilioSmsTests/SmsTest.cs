@@ -7,10 +7,7 @@ using Microsoft.Extensions.Logging;
 using Moq;
 using QuckDemoTwilioSms.Controllers;
 using QuckDemoTwilioSms.Models;
-using QuckDemoTwilioSms.Options;
 using QuckDemoTwilioSms.Wrapper.Interfaces;
-using System.Net;
-using Twilio.Rest.Api.V2010.Account;
 using Xunit;
 
 namespace QuickDemoTwilioSmsTests
@@ -43,7 +40,5 @@ namespace QuickDemoTwilioSmsTests
             controler.SendSms(detail);
 
         }
-
-
     }
 }
