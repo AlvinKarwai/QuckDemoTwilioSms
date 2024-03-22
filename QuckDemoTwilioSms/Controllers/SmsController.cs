@@ -36,8 +36,6 @@ namespace QuckDemoTwilioSms.Controllers
                 return BadRequest();
             }
 
-            
-            
             return Ok();
         }
 
